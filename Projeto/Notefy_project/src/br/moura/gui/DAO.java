@@ -2,7 +2,10 @@ package br.moura.gui;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
+import br.moura.gui.Messages;
 
 public class DAO {
 	private Connection connection = null;
@@ -21,5 +24,37 @@ public class DAO {
 			e.printStackTrace();
 		}
 	}
-
+	public void close() throws SQLException {
+		connection.close();
+	}
+	
+	public void adiciona(Messages message) throws SQLException {
+		String sql = "INSERT INTO MENSAGEM" +
+		"(mensagem,categoria,userid) values(?,?,?)";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+		stmt.setString(1,message.getMessage());
+		stmt.setString(2,message.getCategory());
+		stmt.setString(3,message.getUserMessage());
+		stmt.execute();
+		stmt.close();
+	}
+	
+	public void update(Messages message) throws SQLException {
+		String sql = "UPDATE MENSAGEM SET " +
+		 "mensagem=?, categoria=?, userid=? WHERE id=?";
+		PreparedStatement stmt = connection.prepareStatement(sql);
+		stmt.setString(1,message.getMessage());
+		stmt.setString(2,message.getCategory());
+		stmt.setString(3,message.getUserMessage());
+		stmt.execute();
+		stmt.close();
+	}
+	
+	public void remove(Integer id) throws SQLException {
+		PreparedStatement stmt = connection
+		 .prepareStatement("DELETE FROM Messages WHERE id=?");
+		stmt.setLong(1, id);
+		stmt.execute();
+		stmt.close();
+	}
 }
