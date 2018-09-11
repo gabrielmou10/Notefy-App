@@ -4,17 +4,17 @@ public class Users {
 	
 	private Integer id;
 	private String name;
-	private String user;
+	private String login;
 	private String password;
 	
 	public Integer getId() {return this.id;}
 	public void setId(Integer id) {this.id = id;}
 	
-	public String getNome() {return this.name;}
-	public void setNome(String name) {this.name = name;}
+	public String getName() {return this.name;}
+	public void setName(String name) {this.name = name;}
 	
-	public String getUser() {return this.user;}
-	public void setUser(String user) {this.user = user;}
+	public String getLogin() {return this.login;}
+	public void setLogin(String login) {this.login = login;}
 	
 	public String getPassword() {return this.password;}
 	public void setPassword(String password) {this.password = password;}

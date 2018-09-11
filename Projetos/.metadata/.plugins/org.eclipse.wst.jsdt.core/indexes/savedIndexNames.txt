@@ -1,10 +1,8 @@
 INDEX VERSION 1.4+C:\Users\Gabriel Moura\Documents\Insper\4Semestre\TecnologiasWeb\Projetos\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-4027837639.index
-4185350824.index
 1870991411.index
-2779736234.index
-1627461435.index
-3220057798.index
-681543783.index
 133270681.index
 2431758790.index
+3220057798.index
+681543783.index
+4185350824.index
+1627461435.index
