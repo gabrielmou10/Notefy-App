@@ -14,9 +14,9 @@ import br.moura.gui.DAO;
 import br.moura.gui.Users;
 
 /**
- * Servlet implementation class Update
+ * Servlet implementation class UpdateUsers
  */
-@WebServlet("/Update")
+@WebServlet("/UpdateUsers")
 public class UpdateUsers extends HttpServlet {
 	/**
 	 * 

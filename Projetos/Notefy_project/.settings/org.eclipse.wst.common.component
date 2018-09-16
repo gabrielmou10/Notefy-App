@@ -2,7 +2,7 @@
     <wb-module deploy-name="Notefy_project">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="Notefy_project"/>
         <property name="java-output-path" value="/Notefy_project/build/classes"/>
+        <property name="context-root" value="NotefyApp.jsp"/>
     </wb-module>
 </project-modules>

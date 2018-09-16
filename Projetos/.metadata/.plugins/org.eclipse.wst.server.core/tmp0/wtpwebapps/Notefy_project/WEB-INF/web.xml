@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
-  <display-name>Notefy_project</display-name>
+  <display-name>NotefyApp</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>NotefyApp.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
-    <servlet-name>Main</servlet-name>
-    <servlet-class>br.moura.gui</servlet-class>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>br.moura.gui.User</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Main</servlet-name>
-    <url-pattern>/home</url-pattern>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/SignUp</url-pattern>
   </servlet-mapping>
 </web-app>

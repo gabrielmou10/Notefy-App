@@ -13,9 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import br.moura.gui.DAO;
 
 /**
- * Servlet implementation class Remove
+ * Servlet implementation class RemoveMessage
  */
-@WebServlet("/Remove")
+@WebServlet("/RemoveMessage")
 public class RemoveMessage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	

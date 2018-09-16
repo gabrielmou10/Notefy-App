@@ -35,11 +35,11 @@ public class DAO {
 	
 	public void addmessage(Messages message) throws SQLException {
 		String sql = "INSERT INTO Mensagens" +
-		"(category,usermessage,message) values(?,?,?)";
+		"(message,category,usermessage) values(?,?,?)";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setString(1,message.getCategory());
-		stmt.setString(2,message.getUserMessage());
-		stmt.setString(3,message.getMessage());
+		stmt.setString(1,message.getMessage());
+		stmt.setString(2,message.getCategory());
+		stmt.setString(3,message.getUserMessage());
 		stmt.execute();
 		stmt.close();
 	}
@@ -138,5 +138,9 @@ public class DAO {
 		stmt.close();
 		
 		return users;
+	}
+	
+	public void contador(int x) {
+		x += x;
 	}
 }

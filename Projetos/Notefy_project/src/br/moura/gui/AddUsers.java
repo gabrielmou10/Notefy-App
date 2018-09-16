@@ -15,9 +15,9 @@ import br.moura.gui.Users;
 
 
 /**
- * Servlet implementation class Add
+ * Servlet implementation class AddUsers
  */
-@WebServlet("/Add")
+@WebServlet("/AddUsers")
 public class AddUsers extends HttpServlet {
 	/**
 	 * 
@@ -44,7 +44,6 @@ public class AddUsers extends HttpServlet {
 		DAO dao = new DAO();
 		
 		Users user  = new Users();
-		//user.setId(Integer.valueOf(request.getParameter("id")));
 		user.setName(request.getParameter("name"));
 		user.setLogin(request.getParameter("login"));
 		user.setPassword(request.getParameter("password"));

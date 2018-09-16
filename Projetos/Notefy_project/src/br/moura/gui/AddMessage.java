@@ -15,9 +15,9 @@ import br.moura.gui.Messages;
 
 
 /**
- * Servlet implementation class Add
+ * Servlet implementation class AddMessage
  */
-@WebServlet("/Add")
+@WebServlet("/AddMessage")
 public class AddMessage extends HttpServlet {
 	/**
 	 * 
@@ -30,9 +30,9 @@ public class AddMessage extends HttpServlet {
 		PrintWriter out = response.getWriter();
 			out.println("<html><body>");
 			out.println("<form method='post'>");
+			out.println("message: <input type='text' name='message'><br>");
 			out.println("category: <input type='text' name='category'><br>");
 			out.println("usermessage: <input type='text' name='usermessage'><br>");
-			out.println("message: <input type='text' name='message'><br>");
 			out.println("<input type='submit' value='Submit'>");
 			out.println("</form>");
 			out.println("<body><html>");
@@ -44,7 +44,6 @@ public class AddMessage extends HttpServlet {
 		DAO dao = new DAO();
 		
 		Messages message  = new Messages();
-		//message.setId(Integer.valueOf(request.getParameter("id")));
 		message.setMessage(request.getParameter("message"));
 		message.setCategory(request.getParameter("category"));
 		message.setUserMessage(request.getParameter("usermessage"));

@@ -1,29 +1,24 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <html>
  <style type="text/css">  <%@include file="WEB-INF/style.css" %> </style>
  <link href="WEB-INF/style.css" rel="stylesheet" type="text/css">
  <head>
- <title>Exemplo de JSP</title>
+ <title>NOTES WORKSPACE</title>
  </head>
  <body>
-<%@ page import="java.util.*,br.moura.gui.*" %>
  <ul>
-  <li><a href="#1">
-   <h2>Title #1</h2>
-   <p>Text Content #1</p>
-	</a></li>
- </ul>
-<table border='1'>
+<%@ page import="java.util.*,br.moura.gui.*" %>
 <% DAO dao = new DAO();
  List<Messages> messages = dao.getListaMessages();
  for (Messages message : messages ) { %>
- <tr>
- <td><%=message.getMessage()%></td>
- <td><%=message.getCategory()%></td>
- <td><%=message.getUserMessage()%></td>
- </tr>
+	<li><a href="#1">
+		<h2><%=message.getCategory()%></h2>
+		<p><%=message.getMessage()%></p>
+	</a></li>
 <% } %>
-</table>
+</ul>
 </body>
 </html> 

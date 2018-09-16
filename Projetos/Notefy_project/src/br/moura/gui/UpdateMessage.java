@@ -14,9 +14,9 @@ import br.moura.gui.DAO;
 import br.moura.gui.Messages;
 
 /**
- * Servlet implementation class Update
+ * Servlet implementation class UpdateMessage
  */
-@WebServlet("/Update")
+@WebServlet("/UpdateMessage")
 public class UpdateMessage extends HttpServlet {
 	/**
 	 * 
