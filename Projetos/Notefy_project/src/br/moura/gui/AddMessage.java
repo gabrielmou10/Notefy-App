@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,7 +18,7 @@ import br.moura.gui.Messages;
 /**
  * Servlet implementation class AddMessage
  */
-@WebServlet("/AddMessage")
+@WebServlet(urlPatterns = { "/addnoteform" })
 public class AddMessage extends HttpServlet {
 	/**
 	 * 
@@ -55,10 +56,8 @@ public class AddMessage extends HttpServlet {
 			e.printStackTrace();
 		}
 			
-		PrintWriter out = response.getWriter();
-		out.println("<html><body>");
-		out.println("adicionado" + message.getMessage());
-		out.println("</body></html>");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Mensagem.jsp");
+		dispatcher.forward(request, response);
 		
 		try {
 			dao.close();

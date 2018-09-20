@@ -1,5 +1,7 @@
 package br.moura.gui;
 
+import java.util.Calendar;
+
 public class Messages{
 	
 	private Integer id;
@@ -18,5 +20,5 @@ public class Messages{
 	
 	public String getUserMessage() {return this.usermessage;}
 	public void setUserMessage(String usermessage) {this.usermessage = usermessage;}
-
+	
 }

@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\Gabriel Moura\Documents\Insper\4Semestre\TecnologiasWeb\Projetos\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Gabriel Moura\Documents\Insper\4Semestre\TecnologiasWeb\Projetos\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Notefy_project" path="/Notefy_project" reloadable="true" source="org.eclipse.jst.jee.server:Notefy_project"/></Host>
+      <Context docBase="C:\Users\Gabriel Moura\Documents\Insper\4Semestre\TecnologiasWeb\Projetos\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Gabriel Moura\Documents\Insper\4Semestre\TecnologiasWeb\Projetos\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Notefy_project" path="/NotefyApp.jsp" reloadable="true" source="org.eclipse.jst.jee.server:Notefy_project"/></Host>
     </Engine>
   </Service>
 </Server>

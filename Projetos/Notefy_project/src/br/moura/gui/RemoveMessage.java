@@ -1,9 +1,9 @@
 package br.moura.gui;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,45 +15,38 @@ import br.moura.gui.DAO;
 /**
  * Servlet implementation class RemoveMessage
  */
-@WebServlet("/RemoveMessage")
+@WebServlet(urlPatterns = { "/removenoteform" })
 public class RemoveMessage extends HttpServlet {
+	/**
+	*
+	*/
 	private static final long serialVersionUID = 1L;
-	
 	@Override
-protected void doGet(HttpServletRequest request,
+	protected void doGet(HttpServletRequest request,
 					HttpServletResponse response)
-		throws ServletException, IOException {
-			PrintWriter out = response.getWriter();
-		out.println("<html><body>");
-		out.println("<form method='post'>");
-		out.println("Remover ID: <input type='number' name='id'><br>");
-		out.println("<input type='submit' value='Submit'>");
-		out.println("</form>");
-		out.println("<body><html>");
-}
-	
+					throws ServletException, IOException {
+			request.getRequestDispatcher("/Mensagem.jsp").include(request, response);
+	}
 	@Override
-protected void doPost(HttpServletRequest request,
+	protected void doPost(HttpServletRequest request,
 					HttpServletResponse response)
-		throws ServletException, IOException {
-		
-		DAO dao = new DAO();
-		try {
-			dao.removemessage(Integer.valueOf(request.getParameter("id")));
-		} catch (NumberFormatException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-			PrintWriter out = response.getWriter();
-			out.println("<html><body>");
-			out.println("removido");
-			out.println("</body></html>");
+			throws ServletException, IOException {
+			
+			DAO dao = new DAO();
 			try {
-				dao.close();
-			} catch (SQLException e) {
+				dao.removemessage(Integer.valueOf(request.getParameter("id")));
+			} catch (NumberFormatException | SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-}
+			
+			RequestDispatcher dispatcher = request.getRequestDispatcher("Mensagem.jsp");
+			dispatcher.forward(request, response);
+				try {
+					dao.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	}
 }

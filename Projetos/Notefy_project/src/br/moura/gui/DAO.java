@@ -18,7 +18,7 @@ public class DAO {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(
-					"jdbc:mysql://localhost/Projeto1", "root", "gm9mourelisSQL");
+					"jdbc:mysql://localhost/Projeto1?autoReconnect=true&useSSL=false", "root", "gm9mourelisSQL");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			System.out.println("oioi");
@@ -48,9 +48,9 @@ public class DAO {
 		String sql = "UPDATE Mensagens SET " +
 		 "message=?, category=?, usermessage=? WHERE id=?";
 		PreparedStatement stmt = connection.prepareStatement(sql);
-		stmt.setString(1,message.getCategory());
-		stmt.setString(2,message.getUserMessage());
-		stmt.setString(3,message.getMessage());
+		stmt.setString(1,message.getMessage());
+		stmt.setString(2,message.getCategory());
+		stmt.setString(3,message.getUserMessage());
 		stmt.setInt(4,message.getId());
 		stmt.execute();
 		stmt.close();
@@ -140,7 +140,4 @@ public class DAO {
 		return users;
 	}
 	
-	public void contador(int x) {
-		x += x;
-	}
-}
+}	

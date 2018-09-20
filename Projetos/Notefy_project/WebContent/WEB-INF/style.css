@@ -56,7 +56,7 @@ ul li p {
 ul li a {
 	text-decoration: none;
 	color: #000;
-	background: #ff0080;
+	background: #ff80ff;
 	display: block;
 	height: 10em;
 	width: 10em;
@@ -75,7 +75,7 @@ ul li:nth-child(even) a {
 	-moz-transform: rotate(4deg);
 	position: relative;
 	top: 5px;
-	background: #ffff00;
+	background: #ffff80;
 }
 
 ul li:nth-child(3n) a {
@@ -84,5 +84,5 @@ ul li:nth-child(3n) a {
 	-moz-transform: rotate(-3deg);
 	position: relative;
 	top: -5px;
-	background: #00ff40;
+	background: #00ff80;
 }

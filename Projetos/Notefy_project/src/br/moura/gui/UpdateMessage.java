@@ -1,9 +1,9 @@
 package br.moura.gui;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +16,7 @@ import br.moura.gui.Messages;
 /**
  * Servlet implementation class UpdateMessage
  */
-@WebServlet("/UpdateMessage")
+@WebServlet(urlPatterns = { "/editnoteform" })
 public class UpdateMessage extends HttpServlet {
 	/**
 	 * 
@@ -27,17 +27,7 @@ public class UpdateMessage extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 						HttpServletResponse response)
 	throws ServletException, IOException {
-		PrintWriter out = response.getWriter();
-
-		out.println("<html><body>");
-		out.println("<form method='post'>");
-		out.println("id: <input type='number' name='id'><br>");
-		out.println("message: <input type='text' name='message'><br>");
-		out.println("category: <input type='text' name='category'><br>");
-		out.println("usermessage: <input type='text' name='usermessage' step='0.01'><br>");
-		out.println("<input type='submit' value='Submit'>");
-		out.println("</form>");
-		out.println("<body><html>");
+		request.getRequestDispatcher("/Mensagem.jsp").include(request, response);
 	}
 	
 	@Override
@@ -62,10 +52,8 @@ public class UpdateMessage extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		PrintWriter out = response.getWriter();
-		out.println("<html><body>");
-		out.println("atualizado" + message.getMessage());
-		out.println("</body></html>");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Mensagem.jsp");
+		dispatcher.forward(request, response);
 		
 		try {
 			dao.close();
